@@ -45,4 +45,21 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    /**
+     * Get all activities for the user
+     */
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
+    }
+
+    /**
+     * Get all predictions for the user
+     */
+    public function predictions()
+    {
+        return $this->hasMany(Prediction::class);
+    }
 }

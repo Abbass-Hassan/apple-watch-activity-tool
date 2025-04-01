@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CSVFileUploaded;
 use App\Models\Activity;
 use App\Services\CSVProcessingService;
 use App\Services\FileUploadService;
@@ -90,6 +91,9 @@ class ActivityController extends Controller
         // Process the CSV
         $filePath = $this->fileUploadService->getFilePath($path);
         $results = $this->csvProcessingService->processCSV($filePath, Auth::user());
+        
+        // Dispatch event to trigger prediction updates
+        event(new CSVFileUploaded(Auth::user(), $filePath));
 
         return response()->json([
             'message' => 'File processed successfully',

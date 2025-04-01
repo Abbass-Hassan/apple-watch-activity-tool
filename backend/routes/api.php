@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,10 +12,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user', [AuthController::class, 'user']);
     
-    // Test route
-    Route::get('/test', function () {
-        return response()->json(['message' => 'You are authenticated!']);
-    });
-    
-    // You'll add more protected routes here later
+    Route::get('/activities', [ActivityController::class, 'index']);
+    Route::post('/activities/upload', [ActivityController::class, 'upload']);
+    Route::get('/activities/date', [ActivityController::class, 'getByDate']);
 });

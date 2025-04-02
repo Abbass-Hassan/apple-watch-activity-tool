@@ -1,30 +1,20 @@
 .app-container {
-    display: flex;
     min-height: 100vh;
     background-color: #f5f7fa;
   }
   
   .main-content {
-    flex: 1;
-    margin-left: 250px;
-    transition: margin-left 0.3s;
     display: flex;
     flex-direction: column;
-  }
-  
-  .main-content.sidebar-closed {
-    margin-left: 70px;
+    min-height: 100vh;
   }
   
   .content-area {
     padding: 90px 20px 20px;
     flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
   }
   
-  .app-footer {
-    padding: 15px 20px;
-    border-top: 1px solid #ddd;
-    text-align: center;
-    color: #666;
-    background-color: #fff;
-  }
+  

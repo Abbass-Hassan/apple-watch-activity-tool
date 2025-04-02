@@ -37,7 +37,7 @@ const ActivityStatsChart = () => {
     <div className="chart-container">
       <h3 className="chart-title">Activity Statistics</h3>
       <div className="chart-wrapper">
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer  height={300}>
           <BarChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />

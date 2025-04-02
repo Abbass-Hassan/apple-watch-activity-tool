@@ -25,7 +25,8 @@ const GoalPrediction = () => {
   
   // Create data for pie charts
   const createPieData = (prediction) => {
-    const likelihood = prediction.likelihood;
+    // Ensure likelihood is a valid number and capped at 100
+    const likelihood = Math.min(parseFloat(prediction.likelihood) || 0, 100);
     return [
       { name: 'Likely', value: likelihood, color: getColorForLikelihood(likelihood) },
       { name: 'Unlikely', value: 100 - likelihood, color: '#f5f5f5' }
@@ -54,7 +55,9 @@ const GoalPrediction = () => {
       <div className="goals-container">
         {predictions && Object.keys(predictions).map(metricKey => {
           const metric = predictions[metricKey];
-          const pieData = createPieData(metric);
+          // Create a safe likelihood value without modifying the original object
+          const safeLikelihood = Math.min(parseFloat(metric.likelihood) || 0, 100);
+          const pieData = createPieData({...metric, likelihood: safeLikelihood});
           const readableMetric = metricKey.replace('_', ' ');
           
           return (
@@ -73,19 +76,19 @@ const GoalPrediction = () => {
                       outerRadius={50}
                       paddingAngle={5}
                       dataKey="value"
-                      label={({ value }) => `${value}%`}
+                      label={({ value }) => `${Math.round(value)}%`}
                       labelLine={false}
                     >
                       {pieData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Pie>
-                    <Tooltip />
+                    <Tooltip formatter={(value) => [`${Math.round(value)}%`, '']} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
               <div className="goal-details">
-                <p><strong>Current Average:</strong> {metric.current_average.toFixed(0)}</p>
+                <p><strong>Current Average:</strong> {parseFloat(metric.current_average).toFixed(0)}</p>
                 <p><strong>Goal:</strong> {metric.goal}</p>
                 <p className="trend">
                   Trend: 

@@ -1,0 +1,95 @@
+.prediction-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .prediction-header h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .prediction-description {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  .prediction-loading, .prediction-empty {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .insights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .insight-item {
+    display: flex;
+    gap: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .insight-icon {
+    font-size: 24px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .insight-content {
+    flex: 1;
+  }
+  
+  .insight-message {
+    font-size: 15px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .insight-data {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .data-item {
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+  }
+  
+  .label {
+    color: #666;
+  }
+  
+  .value {
+    font-weight: bold;
+  }
+  
+  .positive {
+    color: #4CAF50;
+  }
+  
+  .negative {
+    color: #F44336;
+  }

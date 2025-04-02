@@ -1,0 +1,99 @@
+.prediction-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .prediction-header h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .prediction-description {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  .prediction-loading, .prediction-empty {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-style: italic;
+  }
+  
+  .trend-chart {
+    height: 250px;
+    margin-bottom: 20px;
+  }
+  
+  .trend-details h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .trends-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .trend-item {
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .trend-metric {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .trend-values {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .trend-direction {
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .trend-direction.increasing {
+    background-color: #4CAF50;
+  }
+  
+  .trend-direction.decreasing {
+    background-color: #F44336;
+  }
+  
+  .trend-direction.stable {
+    background-color: #FFC107;
+    color: #333;
+  }
+  
+  .trend-change {
+    font-size: 14px;
+  }
+  
+  .positive {
+    color: #4CAF50;
+  }
+  
+  .negative {
+    color: #F44336;
+  }
